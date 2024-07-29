@@ -101,6 +101,7 @@
 
 
 
+@include('modals/Login')
 <div x-show="modalNewsletter" :class="modalNewsletter && 'z-99999'"
   class="fixed top-0 left-0 flex h-full min-h-screen w-full items-center justify-center bg-[#000]/25 backdrop-blur-sm px-4 py-5">
   <div x-show="modalNewsletter" x-transition @click.outside="modalNewsletter = false"
@@ -132,6 +133,7 @@
     </div>
   </div>
 </div>
+
 <div x-show="modalSearch" :class="modalSearch && 'z-99999'"
   class="fixed inset-0 flex items-center justify-center px-4 py-5">
   <div class="fixed inset-0 bg-[#000]/25 backdrop-blur-sm transition-opacity"></div>
