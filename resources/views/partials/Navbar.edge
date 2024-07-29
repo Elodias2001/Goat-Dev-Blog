@@ -45,10 +45,10 @@
         </li>
 
         <li class="nav__menu lg:py-6.5" :class="{ 'lg:!py-4' : stickyMenu }">
-          <a href="signin.html" class="hover:text-dark">Inscription</a>
+          <a href="{{route('auth.register')}}" class="hover:text-dark">Inscription</a>
         </li>
         <li class="nav__menu lg:py-6.5" :class="{ 'lg:!py-4' : stickyMenu }">
-          <a href="signin.html" class="hover:text-dark">Connexion</a>
+          <a href="{{route('auth.login')}}" class="hover:text-dark">Connexion</a>
         </li>
       </ul>
     </nav>
