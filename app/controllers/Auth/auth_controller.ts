@@ -5,6 +5,7 @@ import { cuid } from '@adonisjs/core/helpers'
 import app from '@adonisjs/core/services/app'
 import { toPng } from 'jdenticon'
 import { writeFile } from 'node:fs/promises'
+import { promises as fsPromises } from 'node:fs'
 
 export default class AuthController {
   register({ view }: HttpContext) {
@@ -15,6 +16,15 @@ export default class AuthController {
   }
   async handleRegister({ request, session, response }: HttpContext) {
     const { name, email, thumbnail, password } = await request.validateUsing(registerUserValidator)
+
+    // Vérifie si le dossier 'public/users' existe
+    const usersDir = 'public/users'
+    try {
+      await fsPromises.access(usersDir)
+    } catch (error) {
+      // Si Le dossier n'existe pas, donc nous le créons
+      await fsPromises.mkdir(usersDir, { recursive: true })
+    }
 
     if (!thumbnail) {
       const png = toPng(name, 100)
