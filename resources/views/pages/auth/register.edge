@@ -54,9 +54,9 @@
             S'inscrire avec e-mail
           </span>
           <div class="mt-6">
-            <form action="" method="post">
+            <form action="{{ route('handleRegister') }}" method="post" enctype="multipart/form-data">
               {{ csrfField()}}
-              @!component('components/input', { name: 'username', label: "Nom d'utilisateur" })
+              @!component('components/input', { name: 'name', label: "Nom d'utilisateur" })
               @!component('components/input', { name: 'email', label: "Email", type: "email" })
               @!component('components/input', { name: 'thumbnail', label: "Photo de Profil", type: "file" })
               @!component('components/input', { name: 'password', label: "Mot de Passe", type: "password" })
