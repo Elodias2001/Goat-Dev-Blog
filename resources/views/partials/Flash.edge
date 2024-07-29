@@ -1,3 +1,9 @@
+{{-- @if(flashMessages.has('success'))
+<button type="button" class="mr-2 bg-green-600 text-white p-2 rounded  leading-none flex items-center">
+  <span class="font-medium">Génial ! </span> {{old('success')}}
+</button>
+@end --}}
+
 @if(flashMessages.has('success'))
 <div class="flex bg-green-100 rounded-lg p-4 mb-4 text-sm text-green-700" role="alert">
   <svg class="w-5 h-5 inline mr-3" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -36,3 +42,57 @@
   </div>
 </div>
 @endif
+
+<style>
+  .text-red-700 {
+    --tw-text-opacity: 1;
+    color: rgb(185 28 28 / var(--tw-text-opacity)) /* #b91c1c */;
+}
+  .bg-red-100 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(254 226 226 / var(--tw-bg-opacity)) /* #fee2e2 */;
+}
+  .text-green-700 {
+    --tw-text-opacity: 1;
+    color: rgb(21 128 61 / var(--tw-text-opacity)) /* #15803d */;
+}
+  .text-sm {
+    font-size: 0.875rem /* 14px */;
+    line-height: 1.25rem /* 20px */;
+}
+  .inline {
+    display: inline;
+}
+  .text-sm {
+    font-size: 0.875rem /* 14px */;
+    line-height: 1.25rem /* 20px */;
+}
+  .rounded-lg {
+    border-radius: 0.5rem /* 8px */;
+}
+  .bg-green-600 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(22 163 74 / var(--tw-bg-opacity)) /* #16a34a */;
+  }
+
+  .text-white {
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity)) /* #ffffff */;
+}
+
+.rounded {
+  border-radius: 0.25rem /* 4px */;
+}
+
+.leading-none {
+  line-height: 1;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+.bg-green-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(220 252 231 / var(--tw-bg-opacity)) /* #dcfce7 */;
+}
+</style>

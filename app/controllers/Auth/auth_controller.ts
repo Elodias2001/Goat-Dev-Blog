@@ -11,9 +11,11 @@ export default class AuthController {
   register({ view }: HttpContext) {
     return view.render('pages/auth/register')
   }
+
   login({ view }: HttpContext) {
     return view.render('pages/auth/login')
   }
+
   async handleRegister({ request, session, response }: HttpContext) {
     const { name, email, thumbnail, password } = await request.validateUsing(registerUserValidator)
 

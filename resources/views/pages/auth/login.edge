@@ -3,6 +3,7 @@
     <section class="pt-34 lg:pt-25 pb-15 lg:pb-20 bg-gray">
       <div class="max-w-[520px] mx-auto px-4 sm:px-8 xl:px-0">
         <div class="rounded-xl bg-white shadow-box p-4 sm:p-7.5 xl:p-12.5">
+          @include('partials/Flash')
           <div class="text-center mb-9">
             <h1 class="font-bold text-heading-6 sm:text-heading-6 lg:text-heading-6 text-dark mb-3.5">
               Se Connecter
@@ -63,7 +64,7 @@
               </button>
               <p class="text-center mt-5">
                 Vous n'avez pas de compte ?
-                <a href="" class="text-dark">S'inscrire</a>
+                <a href="{{route('auth.register')}}" class="text-dark">S'inscrire</a>
               </p>
             </form>
           </div>
