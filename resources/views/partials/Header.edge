@@ -10,6 +10,8 @@
   {{-- <link href="{{ asset('styles/style.css') }}" rel="stylesheet"> --}}
   <title>{{ title || 'MANSA BLOG'}}</title>
   @vite(['resources/css/style.css', 'resources/js/bundle.js'])
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
   {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
 
 </head>
@@ -25,3 +27,4 @@
   </div>
 
   @include('partials/Navbar')
+  @include('partials/Flash')

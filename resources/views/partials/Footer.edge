@@ -221,13 +221,32 @@
       d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z" />
   </svg>
 </button>
-
+<div id="flash-message" data-message="{{ flashMessages.has('success') ? old('success') : '' }}" data-type="success"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 <script defer src="bundle.js"></script>
+<script>
+    // Exemple de script pour afficher une notification en utilisant Toastr
+  document.addEventListener('DOMContentLoaded', function () {
+    const flashMessage = document.getElementById('flash-message')
+
+    if (flashMessage) {
+      const message = flashMessage.getAttribute('data-message')
+      const type = flashMessage.getAttribute('data-type')
+
+      if (type === 'success') {
+        toastr.success(message)
+      } else if (type === 'error') {
+        toastr.error(message)
+      }
+    }
+  })
+
+</script>
 <script>(function () { function c() { var b = a.contentDocument || a.contentWindow.document; if (b) { var d = b.createElement('script'); d.innerHTML = "window.__CF$cv$params={r:'8a93ca650db271d5',t:'MTcyMTk5MDYyNi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='cdn-cgi/challenge-platform/h/g/scripts/jsd/2db5e1cc2adc/maind41d.js';document.getElementsByTagName('head')[0].appendChild(a);"; b.getElementsByTagName('head')[0].appendChild(d) } } if (document.body) { var a = document.createElement('iframe'); a.height = 1; a.width = 1; a.style.position = 'absolute'; a.style.top = 0; a.style.left = 0; a.style.border = 'none'; a.style.visibility = 'hidden'; document.body.appendChild(a); if ('loading' !== document.readyState) c(); else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c); else { var e = document.onreadystatechange || function () { }; document.onreadystatechange = function (b) { e(b); 'loading' !== document.readyState && (document.onreadystatechange = e, c()) } } } })();</script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015"
   integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ=="
   data-cf-beacon='{"rayId":"8a93ca650db271d5","version":"2024.7.0","r":1,"serverTiming":{"name":{"cfL4":true}},"token":"9a6015d415bb4773a0bff22543062d3b","b":1}'
-  crossorigin="anonymous"></script>
+  crossorigin="anonymous"></scrip>
 </body>
 
 

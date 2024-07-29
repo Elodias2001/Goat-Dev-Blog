@@ -44,12 +44,15 @@
           </a>
         </li>
 
+        @eval(await auth.use('web').check())
+        @if(!auth.use('web').isAuthenticated)
         <li class="nav__menu lg:py-6.5" :class="{ 'lg:!py-4' : stickyMenu }">
           <a href="{{route('auth.register')}}" class="hover:text-dark">Inscription</a>
         </li>
         <li class="nav__menu lg:py-6.5" :class="{ 'lg:!py-4' : stickyMenu }">
           <a href="{{route('auth.login')}}" class="hover:text-dark">Connexion</a>
         </li>
+        @end
       </ul>
     </nav>
 
@@ -117,10 +120,21 @@
           Subscribe
         </button> --}}
 
-        <button @click="modalLogin = true"
+        {{-- <button @click="modalLogin = true"
           class="rounded-md text-white font-medium flex py-2.5 px-5.5 bg-dark hover:opacity-90 lg:transition-all lg:ease-linear lg:duration-200">
           Se Connecter / S'inscrire
-        </button>
+        </button> --}}
+        @eval(await auth.use('web').check())
+        @if(auth.use('web').isAuthenticated)
+        <form method="post" action="{{route('auth.logout')}}?_method=DELETE" class="md:mt-0 md:ml-4"
+            style="cursor: pointer;">
+            {{csrfField()}}
+          <button @click="modalLogin = true"
+            class="rounded-md text-white font-medium flex py-2.5 px-5.5 bg-dark hover:opacity-90 lg:transition-all lg:ease-linear lg:duration-200">
+            Déconnexion
+          </button>
+        </form>
+        @end
       </div>
 
     </div>
