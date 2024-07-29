@@ -55,7 +55,7 @@
             Connexion avec e-mail
           </span>
           <div class="mt-6">
-            <form action="" method="post">
+            <form action="{{route('auth.login')}}" method="post">
               {{ csrfField()}}
               @!component('components/input', { name: 'email', label: "Email", type: "email" })
               @!component('components/input', { name: 'password', label: "Mot de Passe", type: "password" })
