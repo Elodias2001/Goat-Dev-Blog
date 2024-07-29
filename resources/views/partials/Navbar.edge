@@ -129,7 +129,7 @@
         <form method="post" action="{{route('auth.logout')}}?_method=DELETE" class="md:mt-0 md:ml-4"
             style="cursor: pointer;">
             {{csrfField()}}
-          <button @click="modalLogin = true"
+          <button
             class="rounded-md text-white font-medium flex py-2.5 px-5.5 bg-dark hover:opacity-90 lg:transition-all lg:ease-linear lg:duration-200">
             Déconnexion
           </button>
